@@ -2,10 +2,10 @@
 program5.out: program5_driver.o AirshipOrderList.o
 	g++ -g -std=c++17 program5_driver.o AirshipOrderList.o -o program5.out
 
-AirshipOrderList.o: AirshipOrderList.cpp AirshipOrderList.h
+AirshipOrderList.o: AirshipOrderList.cpp AirshipOrderList.hpp
 	g++ -g -std=c++17 -c AirshipOrderList.cpp
 
-program5_driver.o: program5_driver.cpp AirshipOrderList.h
+program5_driver.o: program5_driver.cpp AirshipOrderList.hpp
 	g++ -g -std=c++17 -c program5_driver.cpp
 
 # Run the compiled program5.out executable
