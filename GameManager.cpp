@@ -74,9 +74,11 @@ void GameManager::promptFindDelivery()
     std::string szName;
     std::string szItem;
     std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
-    std::cout << szLineSpacing << "Please Enter the Name of Delivery: ";
+    std::cout << szLineSpacing << "Please Enter the Name of Delivery";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, szName);
-    std::cout << szLineSpacing << "Please Enter the Name of Item: ";
+    std::cout << szLineSpacing << "Please Enter the Name of Item";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, szItem);
     Delivery* delivery = m_airshipOrderList.findDelivery(szName, szItem);
     if(delivery == nullptr) return;
@@ -139,43 +141,41 @@ void GameManager::promptNextCustomerScene()
 
 void GameManager::setCatalog()
 {
-void GameManager::setCatalog()
-{
     szCatalog = R"(
         ──────────────────────────────────────────────
                        CREW STATEMENTS LOG
         ──────────────────────────────────────────────
 
-        [1] Lord Varric – House Altura – Clockwork Champagne
+        [1] Lord Varric – House Altura
             "Between glass and trust, Captain, one 
             always breaks. Guess which I insure."
             ▸ The crate ticks. Subtle. Wrong.
 
-        [2] Professor Elmwick – Cognitive Phase Cylinder
+        [2] Professor Elmwick
             "Do not drop it. Do not insult it. Do 
             not *concentrate* on it."
             ▸ The vapor pulses when he says 
             'concentrate.'
 
-        [3] Mira Dross – Engine Valves
+        [3] Mira Dross
             "Saboteurs love tidy labels and boring 
             numbers. When it looks perfect, squint 
             harder."
             ▸ She watches your reaction—too long.
 
-        [4] Lyra Skyrunner – Encrypted Mail Pouch
+        [4] Lyra Skyrunner
             "They sing when a manifest lies. One 
             of your nobles didn’t like his 
             description line."
             ▸ A faint harmonic hum brushes your 
               teeth, then fades.
 
-        [5] The Mortician – Gray & Sons – Ceremonial Ash Urn
+        [5] The Mortician – Gray & Sons
             "We do not mislabel, Captain. 
              Others... project."
             ▸ Paperwork flawless. Too flawless.
 
-        [6] Dr. Caldera – Cleaning Solvent
+        [6] Dr. Caldera
             "Some people undercharge for what’s 
             real. Some call that misdeclared. 
             I call it... leverage."
