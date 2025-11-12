@@ -28,18 +28,18 @@ ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
     )"
 R"(
         ──────────────────────────────────────────────
-          SKYBORNE EXPRESS – DOCK 7, MIDNIGHT SHIFT
+           SKYBORNE EXPRESS – DOCK 7, MIDNIGHT SHIFT
         ──────────────────────────────────────────────
 
-    Engines purr in the dark. Rain taps Morse on the hull.
-    Six bookings tonight. All flagged "priority." None look honest.
+      Engines purr in the dark. Rain taps Morse on the hull.
+  Six bookings tonight. All flagged "priority." None look honest.
 
-    [Radio crackle]
+                        [Radio crackle]
 
-    DISPATCH: "Captain, wrap by 0100. Double-check every manifest.
-    HQ's twitchy."
+  DISPATCH: "Captain, wrap by 0100. Double-check every manifest.
+                         HQ's twitchy."
 
-    You flip your clipboard open.
+                 You flip your clipboard open.
 
     If something goes wrong tonight, your signature’s on it.
 )";
@@ -55,9 +55,9 @@ void DisplayManager::setCustomerOne() {
           .---.              .//|\\.              .---.
 ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
-           ~~~    / H          [H]          H \    ~~~      0   O    O  \O*
-                 / _H_         _H_         _H_ \           /\   \\[]//   ()*
-                   UUU         UUU         UUU             /\   /\  /\   /\*
+           ~~~    / H          [H]          H \    ~~~      0   O   O  \O*
+                 / _H_         _H_         _H_ \           /\   \\#//   ()*
+                   UUU         UUU         UUU             /\   /\ /\   /\*
     )"
 R"(
 ──────────────────────────────────────────────
@@ -92,7 +92,7 @@ ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
            ~~~    / H          [H]          H \    ~~~      0      0
                  / _H_         _H_         _H_ \           /\     //)  \|/
-                   UUU         UUU         UUU             /\   _ _ /\  #
+                   UUU         UUU         UUU    #        /\   _ _ /\  #
     )"
 R"(
 ──────────────────────────────────────────────
@@ -128,7 +128,7 @@ ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
            ~~~    / H          [H]          H \    ~~~      0
                  / _H_         _H_         _H_ \        O /|\ 
-                   UUU         UUU         UUU           / \
+                   UUU         UUU         UUU    ##     / \
     )"
 R"(
 ──────────────────────────────────────────────
@@ -161,8 +161,8 @@ void DisplayManager::setCustomerFour() {
 ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
            ~~~    / H          [H]          H \    ~~~
-                 / _H_         _H_         _H_ \                o>
-                   UUU         UUU         UUU                 /| 
+                 / _H_         _H_         _H_ \   #            o>
+                   UUU         UUU         UUU    ##           /| 
                                                                / \
     )"
 R"(
@@ -197,8 +197,8 @@ void DisplayManager::setCustomerFive() {
 ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
            ~~~    / H          [H]          H \    ~~~
-                 / _H_         _H_         _H_ \ 
-                   UUU         UUU         UUU             [] 
+                 / _H_         _H_         _H_ \   # 
+                   UUU         UUU         UUU    ###       [] 
                                                             ||
                                                            /__\
     )"
@@ -233,8 +233,8 @@ void DisplayManager::setCustomerSix() {
 ________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
          \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /                 
            ~~~    / H          [H]          H \    ~~~
-                 / _H_         _H_         _H_ \ 
-                   UUU         UUU         UUU          ____   ____
+                 / _H_         _H_         _H_ \   ## 
+                   UUU         UUU         UUU    ###   ____   ____
                                                         |  |___|  |
                                                         |__|   |__|
     )"

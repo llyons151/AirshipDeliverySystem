@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-GameManager::GameManager(const AirshipOrderList& airshipOrderList) : m_airshipOrderList(airshipOrderList){};
+GameManager::GameManager(AirshipOrderList& airshipOrderList) : m_airshipOrderList(airshipOrderList){};
 
 void GameManager::runStartingScene(const std::string& szScene)
 {
@@ -23,24 +23,56 @@ void GameManager::runCustomerScene(const std::string& szScene)
 
 void GameManager::promptCargoInput()
 {
-    std::cout << "promptCargoInput is running\n";
+    std::string szCustomer;
+    std::string szItem;
+    int iQuantity = 0;
+    double dCost = 0.0;
+
+    std::cout << "      ──────────────────────────────────────────────\n";
+    std::cout << "                CARGO MANIFEST ENTRY TERMINAL\n";
+    std::cout << "      ──────────────────────────────────────────────\n\n";
+
+    std::cout << "  Captain, input the following details carefully.\n";
+    std::cout << "  One wrong digit and insurance will have your head.\n\n";
+
+    std::cout << "  Customer / Sender Name: ";
+    std::getline(std::cin >> std::ws, szCustomer);
+
+    std::cout << "  Item Description: ";
+    std::getline(std::cin >> std::ws, szItem);
+
+    std::cout << "  Quantity (units): ";
+    while (!(std::cin >> iQuantity) || iQuantity <= 0) {
+        std::cin.clear();
+        std::cout << "  Invalid number. Enter a positive integer: ";
+    }
+
+    std::cout << "  Declared Value (credits): ";
+    while (!(std::cin >> dCost) || dCost < 0.0) {
+        std::cin.clear();
+        std::cout << "  Invalid amount. Enter a valid cost: ";
+    }
+
+    std::cout << "\n      ──────────────────────────────────────────────\n";
+    std::cout << "  Recording shipment...\n";
+    std::cout << "      Sender:  " << szCustomer << "\n";
+    std::cout << "      Cargo:   " << szItem << "\n";
+    std::cout << "      Units:   " << iQuantity << "\n";
+    std::cout << "      Value:   " << std::fixed << std::setprecision(2)
+              << dCost << " credits\n";
+    std::cout << "      ──────────────────────────────────────────────\n\n";
+
+    m_airshipOrderList.addDelivery(szCustomer, szItem, iQuantity, dCost);
 };
 
 void GameManager::promptNextCustomerScene()
 {
-    std::cout << "      ──────────────────────────────────────────────\n";
-    std::cout << "                    ENTER 1 TO CONTINUE \n";
-    std::cout << "                     ENTER -1 TO EXIT \n";
-    std::cout << "      ──────────────────────────────────────────────\n";
+    std::cout << "        ──────────────────────────────────────────────\n";
+    std::cout << "                    PRESS ENTER TO CONINTUE\n";
+    std::cout << "        ──────────────────────────────────────────────\n";
 
-    int iUserInput;
-    std::cin >> iUserInput;
-
-    if (iUserInput == -1)
-    {
-        std::cout << "Goodbye, Captain.\n";
-        exit(0); 
-    };
+    std::string iUserInput;
+    std::getline(std::cin, iUserInput);
 };
 
 void GameManager::clearScreen() {
