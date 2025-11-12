@@ -7,14 +7,17 @@
 
 int main()
 {
+    AirshipOrderList airshipOrderList;
     DisplayManager displayManager;
-    GameManager gameManager;
+    GameManager gameManager(airshipOrderList);
 
-    displayManager.displayStartingScene();
-    gameManager.promptNextScene();
-    displayManager.clearScreen();
+    gameManager.runStartingScene(displayManager.getStartingScene());
+    gameManager.runCustomerScene(displayManager.getCustomerOne());
+    gameManager.runCustomerScene(displayManager.getCustomerTwo());
+    gameManager.runCustomerScene(displayManager.getCustomerThree());
+    gameManager.runCustomerScene(displayManager.getCustomerFour());
+    gameManager.runCustomerScene(displayManager.getCustomerFive());
+    gameManager.runCustomerScene(displayManager.getCustomerSix());
 
-
-    displayManager.displayCustomerOne();
     return 0;
 }
