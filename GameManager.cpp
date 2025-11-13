@@ -44,6 +44,17 @@ void GameManager::runGuessingScene(const std::string& szScene)
                 promptFindDelivery();
                 break;
 
+            case 3:
+                break;
+
+            case 4:
+                m_airshipOrderList.displayDeliveries();
+                break;
+
+            case 5:
+                promptRemoveDelivery();
+                break;
+
             default:
                 std::cout << szLineSpacing << "Please Enter Valid Input\n";
                 break;
@@ -55,13 +66,13 @@ void GameManager::runGuessingScene(const std::string& szScene)
 int GameManager::promptGuessingScene()
 {
     int iChoice;
-    std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
+    std::cout << szLineSpacing << "──────────────────────────────────────────────\n\n";
     std::cout << szLineSpacing << "1. View Catalog\n";
     std::cout << szLineSpacing << "2. Find Delivery\n";
     std::cout << szLineSpacing << "3. Modify Delivery\n";
     std::cout << szLineSpacing << "4. Display Deliveries\n";
     std::cout << szLineSpacing << "5. Delete Delivery\n";
-    std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
+    std::cout << szLineSpacing << "\n──────────────────────────────────────────────\n\n";
     std::cout << szLineSpacing << "Enter Choice: ";
     std::cin >> iChoice;
 
@@ -69,20 +80,58 @@ int GameManager::promptGuessingScene()
     return iChoice;
 };
 
+void GameManager::promptNameAndItem()
+{
+    std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
+    std::cout << szLineSpacing << "Please Enter Delivery Name: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, m_szName);
+    std::cout << szLineSpacing << "Please Enter Item Name: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, m_szItem);
+};
+
 void GameManager::promptFindDelivery()
 {
-    std::string szName;
-    std::string szItem;
-    std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
-    std::cout << szLineSpacing << "Please Enter the Name of Delivery";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(std::cin, szName);
-    std::cout << szLineSpacing << "Please Enter the Name of Item";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(std::cin, szItem);
-    Delivery* delivery = m_airshipOrderList.findDelivery(szName, szItem);
-    if(delivery == nullptr) return;
+    promptNameAndItem();
+    Delivery* delivery = m_airshipOrderList.findDelivery(m_szName, m_szItem);
+    if(delivery == nullptr)
+    {
+        std::cout << szLineSpacing << "Delivery Not Found\n";
+        return;
+    };
     m_airshipOrderList.displayDelivery(delivery);
+};
+
+void GameManager::promptRemoveDelivery()
+{
+    promptNameAndItem();
+    Delivery* delivery = m_airshipOrderList.findDelivery(m_szName, m_szItem);
+    if(delivery == nullptr)
+    {
+        std::cout << szLineSpacing << "Delivery Not Found\n";
+        return;
+    };
+
+    m_airshipOrderList.displayDelivery(delivery);
+    char cInput;
+    std::cout << szLineSpacing << "Are You Sure This Is The Fraudulent Package? (y/n): ";
+    std::cin >> cInput;
+    if(cInput != 'y')
+    {
+        std::cout << szLineSpacing << "Aborting Package Removal\n";
+        return;
+    };
+
+    bool bIsRemoved = m_airshipOrderList.removeDelivery(m_szName, m_szItem);
+    if(bIsRemoved)
+    {
+        std::cout << szLineSpacing << "Package Successfully Removed\n";
+    }
+    else
+    {
+        std::cout << szLineSpacing << "Issue Removing Package\n";
+    }
 };
 
 void GameManager::promptCargoInput()

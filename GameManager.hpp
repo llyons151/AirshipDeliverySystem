@@ -8,11 +8,16 @@ class GameManager{
         const char* szLineSpacing = "        ";
         std::string szCatalog;
         AirshipOrderList& m_airshipOrderList;
+        std::string m_szName;
+        std::string m_szItem;
 
     private:
         int promptGuessingScene();
+        void promptNameAndItem();
         void promptCargoInput();
         void promptFindDelivery();
+        void promptModifyDelivery();
+        void promptRemoveDelivery();
         void promptNextCustomerScene();
         void setCatalog();
         void clearScreen();
