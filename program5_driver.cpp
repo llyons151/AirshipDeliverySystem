@@ -20,6 +20,14 @@ int main()
     gameManager.runCustomerScene(displayManager.getCustomerSix());
     gameManager.runGuessingScene(displayManager.getGuessingScene());
 
+    if(gameManager.getIsGuessCorrect() == true)
+    {
+        gameManager.runEndingScene(displayManager.getVictoryScene());
+    }
+    else
+    {
+        gameManager.runEndingScene(displayManager.getLosingScene());
+    };
 
     return 0;
 }

@@ -10,6 +10,8 @@ DisplayManager::DisplayManager() {
     setCustomerFive();
     setCustomerSix();
     setGuessingScene();
+    setVictoryScene();
+    setLosingScene();
 }
 
 void DisplayManager::setStartingScene() {

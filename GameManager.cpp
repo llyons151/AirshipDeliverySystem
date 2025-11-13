@@ -26,6 +26,12 @@ void GameManager::runCustomerScene(const std::string& szScene)
     promptNextCustomerScene();
 };
 
+void GameManager::runEndingScene(const std::string& szScene)
+{
+    clearScreen();
+    std::cout << szScene << "\n";
+};
+
 void GameManager::runGuessingScene(const std::string& szScene)
 {
     int iChoice;
@@ -169,15 +175,15 @@ void GameManager::promptRemoveDelivery()
     };
 
     bool bIsRemoved = m_airshipOrderList.removeDelivery(m_szName, m_szItem);
-    if(bIsRemoved)
-    {
-        std::cout << szLineSpacing << "Package Successfully Removed\n\n";
-        bHasRemovedPackage = true;
-    }
-    else
+    if(!bIsRemoved)
     {
         std::cout << szLineSpacing << "Issue Removing Package\n";
-    }
+        return;
+    };
+
+    std::cout << szLineSpacing << "Package Successfully Removed\n\n";
+    bHasRemovedPackage = true;
+    (m_szName == m_fraudulentPackageName) ? bIsGuessCorrect = true : bIsGuessCorrect = false;
 };
 
 void GameManager::promptCargoInput()
