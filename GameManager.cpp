@@ -71,8 +71,8 @@ int GameManager::promptGuessingScene()
     std::cout << szLineSpacing << "2. Find Delivery\n";
     std::cout << szLineSpacing << "3. Modify Delivery\n";
     std::cout << szLineSpacing << "4. Display Deliveries\n";
-    std::cout << szLineSpacing << "5. Delete Delivery\n";
-    std::cout << szLineSpacing << "\n──────────────────────────────────────────────\n\n";
+    std::cout << szLineSpacing << "5. Delete Delivery\n\n";
+    std::cout << szLineSpacing << "──────────────────────────────────────────────\n\n";
     std::cout << szLineSpacing << "Enter Choice: ";
     std::cin >> iChoice;
 
@@ -84,11 +84,9 @@ void GameManager::promptNameAndItem()
 {
     std::cout << szLineSpacing << "──────────────────────────────────────────────\n";
     std::cout << szLineSpacing << "Please Enter Delivery Name: ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(std::cin, m_szName);
+    std::getline(std::cin >> std::ws, m_szName);
     std::cout << szLineSpacing << "Please Enter Item Name: ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(std::cin, m_szItem);
+    std::getline(std::cin >> std::ws, m_szItem);
 };
 
 void GameManager::promptFindDelivery()
