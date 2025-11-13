@@ -334,3 +334,102 @@ R"(
 
 )";
 }
+
+void DisplayManager::setVictoryScene() {
+    m_szVictoryScene = R"(                 
+                 .                             .
+                //                             \\
+               //                               \\
+              //                                 \\
+             //                _._                \\
+          .---.              .//|\\.              .---.
+________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
+         \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /    
+           ~~~    / H          [H]          H \    ~~~      0     *
+                 / _H_         _H_         _H_ \           /\#   \|/
+                   UUU         UUU         UUU             /\     |
+                                                              \   |
+)"
+R"(
+        ──────────────────────────────────────────────
+             [January 17 – 02:07, Manifest Verified]
+        ──────────────────────────────────────────────
+
+        The pouch on your hip gives one clean, steady hum—
+        a truth-note.
+
+        You flip the final slip over, scribble your
+        signature, and the hangar exhales with you.
+
+        DISPATCH (radio): "Captain, HQ confirms it. Good call.
+        That could’ve cost the entire dock."
+
+        A soft clunk echoes as the loading clamps lock. 
+        Engines spool, hungry to leave.
+
+        Mira passes by, gives a rare nod. 
+        Lyra’s feathers settle. 
+        Even the urn seems… quieter.
+
+        Tonight, nothing blows up, phases out,
+        lies, or sings.
+
+        You earned your lift-off.
+
+        ✔ Manifest cleared  
+        ✔ Shipment secured  
+        ✔ Captain intact  
+
+        Victory feels like a hangar finally going still.
+)";
+}
+
+void DisplayManager::setLosingScene() {
+    m_szLosingScene = R"(                 
+                 .                             .
+                //                             \\
+               //                               \\
+              //                                 \\
+             //                _._                \\
+          .---.              .//|\\.              .---.
+________ / .-. \_________..-~ _.-._ ~-..________ / .-. \_________
+         \ ~-~ /   /H-     `-=.___.=-'     -H\   \ ~-~ /    
+           ~~~    / H          [H]          H \    ~~~      0
+                 / _H_         _H_         _H_ \         X /\#
+                   UUU         UUU         UUU           /\ X
+)"
+R"(
+        ──────────────────────────────────────────────
+             [January 17 – 02:07, Manifest Failure]
+        ──────────────────────────────────────────────
+
+        The pouch on your hip screeches—short, sharp,
+        unmistakably wrong.
+
+        Before you can flip the slip back over,
+        the crate beside you *ticks* out of rhythm.
+
+        Someone shouts.  
+        Something hums.  
+        Everything goes sideways.
+
+        A flash of blue vapor bleeds through the metal
+        like fog through fingers. The air screams and
+        the hangar lights pop, one by one.
+
+        DISPATCH (radio, panicked): "Captain—Captain?!  
+        You logged the wrong manifest. Back away—"
+
+        But it’s too late.
+
+        The shipment you cleared wasn’t honest.  
+        And tonight, honesty was the only shield you had.
+
+        ✖ Manifest falsified  
+        ✖ HQ breach reported  
+        ✖ Captain compromised  
+
+        The hangar falls silent, except for the rain
+        tapping your mistake into the floor.
+)";
+}

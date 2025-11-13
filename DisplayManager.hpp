@@ -11,7 +11,8 @@ private:
     std::string m_szCustomerFive;
     std::string m_szCustomerSix;
     std::string m_szGuessingScene;
-    std::string m_szEndingScene;
+    std::string m_szVictoryScene;
+    std::string m_szLosingScene;
 
     void setStartingScene();
     void setCustomerOne();
@@ -21,7 +22,8 @@ private:
     void setCustomerFive();
     void setCustomerSix();
     void setGuessingScene();
-    void setEndingScene();
+    void setVictoryScene();
+    void setLosingScene();
 
 public:
     DisplayManager();
@@ -33,5 +35,6 @@ public:
     const std::string& getCustomerFive()   const { return m_szCustomerFive; }
     const std::string& getCustomerSix()    const { return m_szCustomerSix; }
     const std::string& getGuessingScene()  const { return m_szGuessingScene; }
-    const std::string& getEndingScene()    const { return m_szEndingScene; }
+    const std::string& getVictoryScene()   const { return m_szVictoryScene; }
+    const std::string& getLosingScene()   const { return m_szLosingScene; }
 };

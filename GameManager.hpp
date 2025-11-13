@@ -12,6 +12,7 @@ class GameManager{
         std::string m_szItem;
         int m_iQuantity;
         double m_dCost;
+        bool bHasRemovedPackage = false;
 
     private:
         int promptGuessingScene();

@@ -114,6 +114,7 @@ void AirshipOrderList::displayDeliveries() const
 void AirshipOrderList::displayDelivery(const Delivery* delivery)
 {
     Delivery* current = pHead;
+    int iCount = 1;
 
     if(current == nullptr)
     {
@@ -125,6 +126,7 @@ void AirshipOrderList::displayDelivery(const Delivery* delivery)
     {
         if(current->szName == delivery->szName && current->szItem == delivery->szItem)
         {
+            std::cout << szLineSpacing << "DELIVERY NUMBER: " << iCount << "\n";
             std::cout << szLineSpacing << "Name: " << current->szName << "\n";
             std::cout << szLineSpacing << "Item: " << current->szItem << "\n";
             std::cout << szLineSpacing << "Quantity: " << current->iQuantity << "\n";

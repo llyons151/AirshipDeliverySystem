@@ -29,7 +29,7 @@ void GameManager::runCustomerScene(const std::string& szScene)
 void GameManager::runGuessingScene(const std::string& szScene)
 {
     int iChoice;
-    while(true)
+    while(!bHasRemovedPackage)
     {
         clearScreen();
         std::cout << szScene << "\n";
@@ -172,6 +172,7 @@ void GameManager::promptRemoveDelivery()
     if(bIsRemoved)
     {
         std::cout << szLineSpacing << "Package Successfully Removed\n\n";
+        bHasRemovedPackage = true;
     }
     else
     {
