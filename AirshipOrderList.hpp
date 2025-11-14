@@ -26,7 +26,7 @@ class AirshipOrderList
 {
     private:
         Delivery* pHead;
-        const char* szLineSpacing = "        ";
+        const char* szLineSpacing = "";
 
     public:
         AirshipOrderList();

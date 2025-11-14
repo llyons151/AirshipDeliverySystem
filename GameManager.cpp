@@ -72,7 +72,6 @@ void GameManager::runGuessingScene(const std::string& szScene)
 
 int GameManager::promptGuessingScene()
 {
-    int iChoice;
     std::cout << szLineSpacing << "──────────────────────────────────────────────\n\n";
     std::cout << szLineSpacing << "1. View Catalog\n";
     std::cout << szLineSpacing << "2. Find Delivery\n";
@@ -81,13 +80,27 @@ int GameManager::promptGuessingScene()
     std::cout << szLineSpacing << "5. Delete Delivery\n\n";
     std::cout << szLineSpacing << "──────────────────────────────────────────────\n\n";
     std::cout << szLineSpacing << "Enter Choice: ";
-    std::cin >> iChoice;
-    std::cout << "\n";
-
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    int iChoice = getChoice();
     return iChoice;
 };
 
+
+int GameManager::getChoice() {
+    int iChoice;
+
+    while (true) {
+        std::cout << "Enter choice: ";
+        if (std::cin >> iChoice) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            return iChoice;  
+        }
+
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+
+        std::cout << "\nInvalid input. Please enter a number.\n\n";
+    }
+}
 void GameManager::promptNameAndItem()
 {
     std::cout << szLineSpacing << "Please Enter Delivery Name: ";
@@ -244,95 +257,95 @@ void GameManager::promptNextCustomerScene()
 void GameManager::setCatalog()
 {
     szCatalog = R"(
-        ──────────────────────────────────────────────
-                       CREW STATEMENTS LOG
-        ──────────────────────────────────────────────
+──────────────────────────────────────────────
+               CREW STATEMENTS LOG
+──────────────────────────────────────────────
 
 
-        [1] Bulk Ryker
-            Price Note:
-              Protein Infusion Canisters priced at 200 — you’ve seen
-              similar canisters and they never come that cheap.
+[1] Bulk Ryker
+    Price Note:
+      Protein Infusion Canisters priced at 200 — you’ve seen
+      similar canisters and they never come that cheap.
 
-            Accusation:
-              Points at Linton: “Bro jitters like he drank twelve
-              energy drinks… I wouldn’t trust him alone with my gym bag.”
+    Accusation:
+      Points at Linton: “Bro jitters like he drank twelve
+      energy drinks… I wouldn’t trust him alone with my gym bag.”
 
-            Riddle:
-              "25 * 5 is 100"
-
-
-        [2] Buck Hawthorne
-            Price Note:
-              Classic Ale Keg priced at 90 — number sounds right.
-
-            Accusation:
-              Comments on Vesper: smells like excuses, reminds him of
-              his disappointing son, but deep down solid.
-
-            Riddle:
-              “What has numbers but no weight,
-               letters but no sound?”
+    Riddle:
+      "25 * 5 is 100"
 
 
-        [3] Old Man Ripple
-            Price Note:
-              Net-Stabilizer Kit priced at 120 — you’ve seen them
-              closer to 180; his price feels light.
+[2] Buck Hawthorne
+    Price Note:
+      Classic Ale Keg priced at 90 — number sounds right.
 
-            Accusation:
-              Says Bulk’s numbers feel lighter than his temper.
+    Accusation:
+      Comments on Vesper: smells like excuses, reminds him of
+      his disappointing son, but deep down solid.
 
-            Riddle:
-              “When two shadows stand, only one is true.
-               The liar’s breath chills the page they touch.”
-
-
-        [4] Bramble Nett
-            Price Note:
-              Cultivation Spore Beds priced at 150 — standard rate.
-
-            Accusation:
-              Says Buck’s crate smells honest; says Ripple is someone
-              he’d trust with a secret.
-
-            Riddle:
-              “The quietest growth makes the loudest bloom
-               when no one’s watching.”
+    Riddle:
+      “What has numbers but no weight,
+       letters but no sound?”
 
 
-        [5] Vesper Morrow
-            Price Note:
-              EM Field Sensor priced at 110 — you know they run more
-              than twice that.
+[3] Old Man Ripple
+    Price Note:
+      Net-Stabilizer Kit priced at 120 — you’ve seen them
+      closer to 180; his price feels light.
 
-            Accusation:
-              Says Buck acts harmless but is always listening, knows
-              more than he should.
+    Accusation:
+      Says Bulk’s numbers feel lighter than his temper.
 
-            Riddle:
-              (None)
+    Riddle:
+      “When two shadows stand, only one is true.
+       The liar’s breath chills the page they touch.”
 
 
-        [6] Linton Yarrow
-            Price Note:
-              Soft-Code Debugging Array priced at 320 — you’ve seen
-              arrays like it listed near 900.
+[4] Bramble Nett
+    Price Note:
+      Cultivation Spore Beds priced at 150 — standard rate.
 
-            Accusation:
-              Says Bramble talks like a meditation app with a glitch,
-              suspects he’s hiding a subroutine.
+    Accusation:
+      Says Buck’s crate smells honest; says Ripple is someone
+      he’d trust with a secret.
 
-            Riddle:
-              “A tool that finds mistakes
-               cannot afford one of its own.”
+    Riddle:
+      “The quietest growth makes the loudest bloom
+       when no one’s watching.”
+
+
+[5] Vesper Morrow
+    Price Note:
+      EM Field Sensor priced at 110 — you know they run more
+      than twice that.
+
+    Accusation:
+      Says Buck acts harmless but is always listening, knows
+      more than he should.
+
+    Riddle:
+      (None)
+
+
+[6] Linton Yarrow
+    Price Note:
+      Soft-Code Debugging Array priced at 320 — you’ve seen
+      arrays like it listed near 900.
+
+    Accusation:
+      Says Bramble talks like a meditation app with a glitch,
+      suspects he’s hiding a subroutine.
+
+    Riddle:
+      “A tool that finds mistakes
+       cannot afford one of its own.”
 )";
 };
 
 void GameManager::clearScreen() {
-#ifdef _WIN32
-    std::system("cls");   
+#ifdef _win32
+    std::system("cls");
 #else
-    std::cout << "\033[2J\033[1;1H";  
+    std::cout << "\033[2j\033[3j\033[h" << std::flush;
 #endif
 }

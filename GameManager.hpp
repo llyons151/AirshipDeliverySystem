@@ -5,7 +5,7 @@
 
 class GameManager{
     private:
-        const char* szLineSpacing = "        ";
+        const char* szLineSpacing = "";
         std::string szCatalog;
         AirshipOrderList& m_airshipOrderList;
         std::string m_fraudulentPackageName = "Linton Yarrow";
@@ -18,6 +18,7 @@ class GameManager{
 
     private:
         int promptGuessingScene();
+        int getChoice();
         void promptNameAndItem();
         void promptQuantityAndCost();
         void promptCargoInput();
