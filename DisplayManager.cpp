@@ -1,6 +1,43 @@
+/*********************************************************************
+File name: DisplayManager.cpp
+Author: <Luke Lyons>(<ujw18>)
+Date: 11/14/2025
+
+Purpose:
+    Implementation file for the DisplayManager class. Initializes
+    all game scene text for the Airship Delivery System.
+Command Parameters:
+    N/A
+Input:
+    N/A
+Results:
+    Initializes all scene text strings.
+Notes:
+    Contains all story text, customer dialogues, and game scenes.
+*********************************************************************/
+
+/*********************************************************************
+include file name: "DisplayManager.hpp"
+Purpose:
+    Header file for DisplayManager class.
+Notes:
+    Contains class definition and function prototypes.
+*********************************************************************/
 #include "DisplayManager.hpp"
 
-DisplayManager::DisplayManager() {
+/*********************************************************************
+DisplayManager::DisplayManager()
+Purpose:
+    Constructor that initializes all scene text by calling setter functions.
+Parameters:
+    None
+Return Value:
+    None (constructor)
+Notes:
+    Calls all setter methods to populate scene strings.
+*********************************************************************/
+DisplayManager::DisplayManager()
+{
     setStartingScene();
     setCustomerOne();
     setCustomerTwo();
@@ -13,7 +50,19 @@ DisplayManager::DisplayManager() {
     setLosingScene();
 }
 
-void DisplayManager::setStartingScene() {
+/*********************************************************************
+void DisplayManager::setStartingScene()
+Purpose:
+    Initializes the starting scene text with the game introduction.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Sets up the opening narrative and instructions for the player.
+*********************************************************************/
+void DisplayManager::setStartingScene()
+{
     m_szStartingScene = R"(                 
                  .                             .
                 //                             \\
@@ -60,7 +109,19 @@ If something goes wrong tonight, your signature’s on it.
 )";
 }
 
-void DisplayManager::setCustomerOne() {
+/*********************************************************************
+void DisplayManager::setCustomerOne()
+Purpose:
+    Initializes customer one (Bulk Ryker) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Bulk Ryker.
+*********************************************************************/
+void DisplayManager::setCustomerOne()
+{
     m_szCustomerOne = R"(                 
                  .                             .
                 //                             \\
@@ -111,7 +172,19 @@ You log:
 )";
 }
 
-void DisplayManager::setCustomerTwo() {
+/*********************************************************************
+void DisplayManager::setCustomerTwo()
+Purpose:
+    Initializes customer two (Buck Hawthorne) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Buck Hawthorne.
+*********************************************************************/
+void DisplayManager::setCustomerTwo()
+{
     m_szCustomerTwo = R"(                 
                  .                             .
                 //                             \\
@@ -167,7 +240,19 @@ You log:
 )";
 }
 
-void DisplayManager::setCustomerThree() {
+/*********************************************************************
+void DisplayManager::setCustomerThree()
+Purpose:
+    Initializes customer three (Old Man Ripple) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Old Man Ripple.
+*********************************************************************/
+void DisplayManager::setCustomerThree()
+{
     m_szCustomerThree = R"(                 
                  .                             .
                 //                             \\
@@ -221,7 +306,19 @@ You log:
 )";
 }
 
-void DisplayManager::setCustomerFour() {
+/*********************************************************************
+void DisplayManager::setCustomerFour()
+Purpose:
+    Initializes customer four (Bramble Nett) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Bramble Nett.
+*********************************************************************/
+void DisplayManager::setCustomerFour()
+{
     m_szCustomerFour = R"(                 
                  .                             .
                 //                             \\
@@ -274,7 +371,19 @@ You log:
 )";
 }
 
-void DisplayManager::setCustomerFive() {
+/*********************************************************************
+void DisplayManager::setCustomerFive()
+Purpose:
+    Initializes customer five (Vesper Morrow) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Vesper Morrow.
+*********************************************************************/
+void DisplayManager::setCustomerFive()
+{
     m_szCustomerFive = R"(                 
                  .                             .
                 //                             \\
@@ -327,7 +436,19 @@ You log:
 )";
 }
 
-void DisplayManager::setCustomerSix() {
+/*********************************************************************
+void DisplayManager::setCustomerSix()
+Purpose:
+    Initializes customer six (Linton Yarrow) scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Contains dialogue and delivery information for Linton Yarrow.
+*********************************************************************/
+void DisplayManager::setCustomerSix()
+{
     m_szCustomerSix = R"(                 
                  .                             .
                 //                             \\
@@ -382,6 +503,17 @@ You log:
 )";
 }
 
+/*********************************************************************
+void DisplayManager::setGuessingScene()
+Purpose:
+    Initializes the guessing scene text where player analyzes deliveries.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Sets up the scene where player must identify the fraudulent package.
+*********************************************************************/
 void DisplayManager::setGuessingScene()
 {
     m_szGuessingScene = R"(                 
@@ -419,7 +551,19 @@ Review the entries and delete the suspect's delivery:
 )";
 }
 
-void DisplayManager::setVictoryScene() {
+/*********************************************************************
+void DisplayManager::setVictoryScene()
+Purpose:
+    Initializes the victory ending scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Displayed when player correctly identifies the fraudulent package.
+*********************************************************************/
+void DisplayManager::setVictoryScene()
+{
     m_szVictoryScene = R"(                 
                   _
                  -=\`\
@@ -471,7 +615,19 @@ Victory feels like a hangar finally going still.
 )";
 }
 
-void DisplayManager::setLosingScene() {
+/*********************************************************************
+void DisplayManager::setLosingScene()
+Purpose:
+    Initializes the losing ending scene text.
+Parameters:
+    None
+Return Value:
+    None
+Notes:
+    Displayed when player incorrectly identifies the fraudulent package.
+*********************************************************************/
+void DisplayManager::setLosingScene()
+{
     m_szLosingScene = R"(                            * #** 
                  .          **              .__      * ###*
                 //        **##**             \|_       *#*

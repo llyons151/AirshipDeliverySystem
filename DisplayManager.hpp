@@ -1,18 +1,46 @@
+/*********************************************************************
+File name: DisplayManager.hpp
+Author: <Luke Lyons>(<ujw18>)
+Date: 11/14/2025
+
+Purpose:
+    Header file for the DisplayManager class which manages all display
+    text and scenes for the Airship Delivery System game.
+Command Parameters:
+    N/A
+Input:
+    N/A
+Results:
+    Class definition for DisplayManager.
+Notes:
+    Contains story scenes and customer dialogue for the game.
+*********************************************************************/
+
 #pragma once
 #include <string>
 
-class DisplayManager {
+/*********************************************************************
+Class Name: DisplayManager
+Purpose:
+    Manages and stores all display text for the Airship Delivery
+    System game including story scenes and customer dialogues.
+Notes:
+    All scenes are stored as strings and initialized in the constructor.
+    Getter methods provide read-only access to scene text.
+*********************************************************************/
+class DisplayManager
+{
 private:
-    std::string m_szStartingScene;
-    std::string m_szCustomerOne;
-    std::string m_szCustomerTwo;
-    std::string m_szCustomerThree;
-    std::string m_szCustomerFour;
-    std::string m_szCustomerFive;
-    std::string m_szCustomerSix;
-    std::string m_szGuessingScene;
-    std::string m_szVictoryScene;
-    std::string m_szLosingScene;
+    std::string m_szStartingScene;  // Opening scene text
+    std::string m_szCustomerOne;    // Bulk Ryker scene text
+    std::string m_szCustomerTwo;    // Buck Hawthorne scene text
+    std::string m_szCustomerThree;  // Old Man Ripple scene text
+    std::string m_szCustomerFour;   // Bramble Nett scene text
+    std::string m_szCustomerFive;   // Vesper Morrow scene text
+    std::string m_szCustomerSix;    // Linton Yarrow scene text
+    std::string m_szGuessingScene;  // Guessing phase scene text
+    std::string m_szVictoryScene;   // Victory ending scene text
+    std::string m_szLosingScene;    // Losing ending scene text
 
     void setStartingScene();
     void setCustomerOne();
