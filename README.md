@@ -62,32 +62,26 @@ make
 
 ### How to Play
 
-Read the Opening Scene to understand your mission.
+-Read the Opening Scene to understand your mission.
+-Meet All Six Customers and listen carefully.
+-Collect Clues
 
-Meet All Six Customers and listen carefully.
+-Pay attention to:
+  -What customers say about each other
+  -Price inconsistencies
+  -Riddles and cryptic lines
+  -Odd behaviors or reactions
+  
+-Manage the Manifest
+-Use the linked list menu to view, add, remove, or modify cargo orders.
+-Make Your Decision
+-Choose which package to remove.
 
-Collect Clues
-Pay attention to:
-
-What customers say about each other
-
-Price inconsistencies
-
-Riddles and cryptic lines
-
-Odd behaviors or reactions
-
-Manage the Manifest
-Use the linked list menu to view, add, remove, or modify cargo orders.
-
-Make Your Decision
-Choose which package to remove.
-
-Experience the Ending
-Your deduction determines victory or disaster.
+-Experience the Ending
+-Your deduction determines victory or disaster.
 
 ### Project Structure
-
+```bash
 skyward-suspicion/
 ├── AirshipOrderList.hpp      # Linked list structure header
 ├── AirshipOrderList.cpp      # Manifest management logic
@@ -98,3 +92,4 @@ skyward-suspicion/
 ├── program5_driver.cpp       # Program entry point
 ├── Makefile                  # Build system
 └── README.md                 # This file
+```
